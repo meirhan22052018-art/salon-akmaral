@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="ru" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Салон красоты «Акмарал» | Астана</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gold: {
+                            light: '#F5E6D3',
+                            DEFAULT: '#C5A059',
+                            dark: '#A37F39'
+                        },
+                        cream: '#FAF7F2',
+                        whatsapp: '#25D366'
+                    },
+                    fontFamily: {
+                        serif: ['Playfair Display', 'serif'],
+                        sans: ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        .glass {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(12px);
+        }
+        .hero-gradient {
+            background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.75)), url('https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+<body class="bg-cream font-sans text-gray-800 antialiased selection:bg-gold selection:text-white">
+
+    <!-- Navbar -->
+    <nav class="fixed top-0 left-0 right-0 z-50 glass border-b border-gold/20 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="#" class="font-serif text-2xl font-bold tracking-wider text-gray-900 flex items-center gap-2">
+                <span class="text-gold"><i class="fa-solid fa-crown"></i></span> АКМАРАЛ
+            </a>
+            
+            <div class="hidden md:flex items-center gap-8 font-medium text-sm tracking-wide">
+                <a href="#services" class="hover:text-gold transition duration-300">Услуги и цены</a>
+                <a href="#depilation" class="hover:text-gold transition duration-300">Депиляция</a>
+                <a href="#about" class="hover:text-gold transition duration-300">О салоне</a>
+                <a href="#booking-form" class="hover:text-gold transition duration-300">Записаться</a>
+            </div>
+
+            <div class="hidden lg:flex items-center gap-4">
+                <a href="tel:+77172368361" class="flex items-center gap-2 text-sm font-semibold text-gray-700 hover:text-gold transition">
+                    <i class="fa-solid fa-phone text-gold"></i> +7 (7172) 36-83-61
+                </a>
+                <a href="#booking-form" class="bg-gold hover:bg-gold-dark text-white px-5 py-2.5 rounded-full text-sm font-semibold transition transform hover:scale-105 shadow-lg shadow-gold/20 flex items-center gap-2">
+                    <i class="fa-regular fa-calendar-check"></i> Записаться
+                </a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button class="md:hidden text-2xl text-gray-800 focus:outline-none" onclick="toggleMenu()">
+                <i class="fa-solid fa-bars" id="menu-icon"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="md:hidden hidden bg-white border-b border-gray-100 px-6 py-6 space-y-4 shadow-xl" id="mobile-menu">
+            <a href="#services" class="block font-medium hover:text-gold" onclick="toggleMenu()">Услуги и цены</a>
+            <a href="#depilation" class="block font-medium hover:text-gold" onclick="toggleMenu()">Депиляция</a>
+            <a href="#about" class="block font-medium hover:text-gold" onclick="toggleMenu()">О салоне</a>
+            <a href="#booking-form" class="block font-medium hover:text-gold" onclick="toggleMenu()">Записаться</a>
+            <div class="pt-4 border-t border-gray-100 flex flex-col gap-3">
+                <a href="tel:+77172368361" class="text-gold font-semibold"><i class="fa-solid fa-phone mr-2"></i> +7 (7172) 36-83-61</a>
+                <a href="tel:+77023999336" class="text-emerald-600 font-semibold"><i class="fa-brands fa-whatsapp mr-2"></i> +7 (702) 399-93-36</a>
+                <a href="#booking-form" onclick="toggleMenu()" class="bg-gold text-white py-2.5 rounded-full text-center font-medium shadow-md">
+                    Записаться онлайн
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero-gradient h-screen flex items-center justify-center text-center text-white px-4 relative overflow-hidden">
+        <div class="max-w-4xl mx-auto z-10 space-y-6" data-aos="zoom-in" data-aos-duration="1000">
+            <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md px-4 py-1.5 rounded-full border border-white/20 text-xs tracking-widest uppercase">
+                <span class="text-yellow-400"><i class="fa-solid fa-star"></i> Рейтинг 4.7 (35 отзывов)</span>
+            </div>
+            <h1 class="font-serif text-4xl md:text-6xl font-bold tracking-wide">
+                САЛОН КРАСОТЫ «АКМАРАЛ»
+            </h1>
+            <p class="text-lg md:text-xl text-gray-200 font-light max-w-2xl mx-auto">
+                г. Астана, ул. Каныш Сатпаев, 4. Ваш идеальный образ, профессиональный уход и уютная атмосфера.
+            </p>
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
+                <a href="#booking-form" class="w-full sm:w-auto bg-gold hover:bg-gold-dark text-white px-8 py-4 rounded-full font-semibold transition duration-300 transform hover:scale-105 shadow-xl shadow-gold/40 flex items-center justify-center gap-3">
+                    <i class="fa-regular fa-calendar-check text-xl"></i> Записаться онлайн
+                </a>
+                <a href="#services" class="w-full sm:w-auto bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/30 text-white px-8 py-4 rounded-full font-semibold transition duration-300">
+                    Наши услуги
+                </a>
+            </div>
+        </div>
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce text-white/70">
+            <a href="#services"><i class="fa-solid fa-chevron-down text-xl"></i></a>
+        </div>
+    </header>
+
+    <!-- Info Banner -->
+    <section class="bg-white py-12 border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            <div data-aos="fade-up" data-aos-delay="100">
+                <div class="text-4xl font-serif font-bold text-gold mb-1">4.7 ★</div>
+                <div class="text-sm text-gray-500 font-medium">35 реальных отзывов</div>
+            </div>
+            <div data-aos="fade-up" data-aos-delay="200">
+                <div class="text-4xl font-serif font-bold text-gold mb-1">10:00-21:00</div>
+                <div class="text-sm text-gray-500 font-medium">Ежедневно без выходных</div>
+            </div>
+            <div data-aos="fade-up" data-aos-delay="300">
+                <div class="text-4xl font-serif font-bold text-gold mb-1">Сатпаева 4</div>
+                <div class="text-sm text-gray-500 font-medium">Удобное расположение</div>
+            </div>
+            <div data-aos="fade-up" data-aos-delay="400">
+                <div class="text-4xl font-serif font-bold text-gold mb-1">Top</div>
+                <div class="text-sm text-gray-500 font-medium">Мастера своего дела</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Services Section -->
+    <section id="services" class="py-24 max-w-7xl mx-auto px-6">
+        <div class="text-center max-w-2xl mx-auto mb-16" data-aos="fade-up">
+            <h2 class="text-gold uppercase tracking-widest text-sm font-semibold mb-3">Направления салона</h2>
+            <h3 class="font-serif text-4xl font-bold text-gray-900">Услуги и прайс-лист</h3>
+            <div class="w-16 h-0.5 bg-gold mx-auto mt-4"></div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Hair Service -->
+            <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-500 transform hover:-translate-y-2 border border-gray-100 flex flex-col justify-between" data-aos="fade-up" data-aos-delay="100">
+                <div class="h-60 overflow-hidden relative">
+                    <img src="https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&w=800&q=80" alt="Парикмахерские услуги" class="w-full h-full object-cover transition duration-700 hover:scale-110">
+                    <span class="absolute top-4 right-4 bg-white/90 backdrop-blur-md px-3 py-1 rounded-full text-xs font-semibold text-gold">Парикмахерская</span>
+                </div>
+                <div class="p-8 flex-1 flex flex-col justify-between">
+                    <div>
+                        <h4 class="font-serif text-xl font-bold mb-3 text-gray-900">Парикмахерские услуги</h4>
+                        <ul class="text-gray-600 text-sm space-y-2 mb-6">
+                            <li>• Мужская стрижка — <strong class="text-gray-900">от 4 000 ₸</strong></li>
+                            <li>• Женская стрижка — <strong class="text-gray-900">от 5 000 ₸</strong></li>
+                            <li>• Кератиновое выпрямление</li>
+                            <li>• Ботокс волос, полировка</li>
+                            <li>• Химическая завивка</li>
+                        </ul>
+                    </div>
+                    <div class="pt-4 border-t border-gray-100">
+                        <a href="#booking-form" class="w-full bg-gold/10 hover:bg-gold text-gold hover:text-white py-2.5 rounded-xl font-semibold transition duration-300 flex items-center justify-center gap-2">
+                            Записаться
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Nail Service -->
+            <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-500 transform hover:-translate-y-2 border border-gray-100 flex flex-col justify-between" data-aos="fade-up" data-aos-delay="200">
+                <div class="h-60 overflow-hidden relative">
+                    <img src="https://images.unsplash.com/photo-1632345031435-8727f6c97d34?auto=format&fit=crop&w=800&q=80" alt="Ногтевой сервис" class="w-full h-full object-cover transition duration-700 hover:scale-110">
+                    <span class="absolute top-4 right-4 bg-white/90 backdrop-blur-md px-3 py-1 rounded-full text-xs font-semibold text-gold">Ногтевой сервис</span>
+                </div>
+                <div class="p-8 flex-1 flex flex-col justify-between">
+                    <div>
+                        <h4 class="font-serif text-xl font-bold mb-3 text-gray-900">Маникюр & Педикюр</h4>
+                        <ul class="text-gray-600 text-sm space-y-2 mb-6">
+                            <li>• Аппаратный маникюр</li>
+                            <li>• Мужской маникюр</li>
+                            <li>• Педикюр классический</li>
+                            <li>• Гель-лак покрытие</li>
+                            <li>• Наращивание ногтей</li>
+                        </ul>
+                    </div>
+                    <div class="pt-4 border-t border-gray-100">
+                        <a href="#booking-form" class="w-full bg-gold/10 hover:bg-gold text-gold hover:text-white py-2.5 rounded-xl font-semibold transition duration-300 flex items-center justify-center gap-2">
+                            Записаться
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Epilation General -->
+            <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-500 transform hover:-translate-y-2 border border-gray-100 flex flex-col justify-between" data-aos="fade-up" data-aos-delay="300">
+                <div class="h-60 overflow-hidden relative">
+                    <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=800&q=80" alt="Эпиляция" class="w-full h-full object-cover transition duration-700 hover:scale-110">
+                    <span class="absolute top-4 right-4 bg-white/90 backdrop-blur-md px-3 py-1 rounded-full text-xs font-semibold text-gold">Эпиляция</span>
+                </div>
+                <div class="p-8 flex-1 flex flex-col justify-between">
+                    <div>
+                        <h4 class="font-serif text-xl font-bold mb-3 text-gray-900">Эпиляция & Шугаринг</h4>
+                        <ul class="text-gray-600 text-sm space-y-2 mb-6">
+                            <li>• Шугаринг (сахарная эпиляция)</li>
+                            <li>• Восковая эпиляция</li>
+                            <li>• Электроэпиляция</li>
+                            <li>• Женская депиляция</li>
+                        </ul>
+                    </div>
+                    <div class="pt-4 border-t border-gray-100">
+                        <a href="#depilation" class="w-full bg-gold/10 hover:bg-gold text-gold hover:text-white py-2.5 rounded-xl font-semibold transition duration-300 flex items-center justify-center gap-2">
+                            Прайс на депиляцию
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Women Depilation Specific Section -->
+    <section id="depilation" class="py-20 bg-amber-50/50 border-y border-gold/10">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-2xl mx-auto mb-14" data-aos="fade-up">
+                <h2 class="text-gold uppercase tracking-widest text-sm font-semibold mb-2">Прайс-лист</h2>
+                <h3 class="font-serif text-4xl font-bold text-gray-900">Женская депиляция</h3>
+                <p class="text-gray-600 text-sm mt-2">Мастер: <strong>Анастасия Град</strong> | WhatsApp: <a href="tel:+77023999336" class="text-gold font-bold hover:underline">+7 (702) 399-93-36</a></p>
+                <div class="w-16 h-0.5 bg-gold mx-auto mt-4"></div>
+            </div>
+
+            <div class="max-w-4xl mx-auto bg-white rounded-3xl p-8 md:p-12 shadow-xl border border-gold/20" data-aos="zoom-in">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-4">
+                    <div class="flex justify-between items-center py-2 border-b border-gray-100">
+                        <span class="font-medium text-gray-700">Усики</span>
+                        <span class="font-serif font-bold text-gold">2 000 ₸</span>
+                    </div>
+                    <div class="flex justify-between items-center py-2 border-b border-gray-100">
+                        <span class="font-medium text-gray-700">Лицо</span>
+                        <span class="font-serif font-bold text-gold">4 000 ₸</span>
+                    </div>
+                    <div class="flex justify-between items-center py-2 border-b border-gray-100">
+                        <span class="font-medium text-gray-700">Подмышки</span>
+                        <span class="font-serif font-bold text-gold">2 000 ₸</span>
+                    </div>
+                    <div class="flex justify-between items-center py-2 border-b border-gray-100">
+                        <span class="font-medium text-gray-700">Руки с локтем</span>
+                        <span class="font-serif font-bold text-gold">4 000 ₸</span>
+                    </div>
+                    <div class="flex justify-between items-center py-2 border-b border-gray-100">
+                        <span class="font-medium text-gray-700">Руки полностью</span>
+                        <span class="font-serif font-bold text-gold">4 500 ₸</span>
+                    </div>
+                    <div class="flex justify-between items-center py-2 border-b border-gray-100">
+                        <span class="font-medium text-gray-700">Голени</span>
+                        <span class="font-serif font-bold text-gold">4 500 ₸</span>
+                    </div>
+                    <div class="flex justify-between items-center py-2 border-b border-gray-100">
+                        <span class="font-medium text-gray-700">Бедра</span>
+                        <span class="font-serif font-bold text-gold">4 500 ₸</span>
+                    </div>
+                    <div class="flex justify-between items-center py-2 border-b border-gray-100">
+                        <span class="font-medium text-gray-700">Ноги полностью</span>
+                        <span class="font-serif font-bold text-gold">7 000 ₸</span>
+                    </div>
+                    <div class="flex justify-between items-center py-2 border-b border-gray-100">
+                        <span class="font-medium text-gray-700">Бикини классика</span>
+                        <span class="font-serif font-bold text-gold">4 000 ₸</span>
+                    </div>
+                    <div class="flex justify-between items-center py-2 border-b border-gray-100">
+                        <span class="font-medium text-gray-700">Бикини среднее</span>
+                        <span class="font-serif font-bold text-gold">5 000 ₸</span>
+                    </div>
+                    <div class="flex justify-between items-center py-2 border-b border-gray-100 md:col-span-2">
+                        <span class="font-medium text-gray-700">Бикини глубокое</span>
+                        <span class="font-serif font-bold text-gold">7 000 ₸</span>
+                    </div>
+                </div>
+
+                <div class="mt-8 text-center pt-6 border-t border-gray-100">
+                    <a href="#booking-form" class="bg-gold hover:bg-gold-dark text-white px-8 py-3.5 rounded-full font-semibold transition shadow-lg shadow-gold/30 inline-block">
+                        Записаться на процедуру
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section & Reviews -->
+    <section id="about" class="py-24 max-w-7xl mx-auto px-6">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div data-aos="fade-right">
+                <h2 class="text-gold uppercase tracking-widest text-sm font-semibold mb-3">О нас</h2>
+                <h3 class="font-serif text-4xl font-bold text-gray-900 mb-6">Добро пожаловать в «Акмарал»</h3>
+                <p class="text-gray-600 leading-relaxed mb-6">
+                    Салон красоты «Акмарал» расположен по адресу: <strong>г. Астана, ул. Каныш Сатпаев, 4</strong>. Мы заслужили доверие наших клиентов благодаря безупречному качеству услуг, стерильности инструментов и талантливым мастерам.
+                </p>
+                <div class="space-y-3">
+                    <div class="flex items-center gap-3">
+                        <i class="fa-solid fa-check text-gold"></i>
+                        <span class="text-gray-700">Высокий рейтинг 4.7 на основе 35 отзывов</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <i class="fa-solid fa-check text-gold"></i>
+                        <span class="text-gray-700">Премиальные материалы и косметика</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <i class="fa-solid fa-check text-gold"></i>
+                        <span class="text-gray-700">Уютная атмосфера и заботливый сервис</span>
+                    </div>
+                </div>
+            </div>
+            <div class="grid grid-cols-2 gap-4" data-aos="fade-left">
+                <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=600&q=80" alt="Салон Акмарал интерьер" class="rounded-2xl shadow-lg h-64 object-cover w-full">
+                <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=600&q=80" alt="Мастера салона" class="rounded-2xl shadow-lg h-64 object-cover w-full mt-8">
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking / Contact Section -->
+    <section id="booking-form" class="bg-gray-900 text-white py-24 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            
+            <div class="space-y-6" data-aos="fade-right">
+                <h2 class="text-gold uppercase tracking-widest text-sm font-semibold">Контакты и запись</h2>
+                <h3 class="font-serif text-4xl font-bold">Мы ждем вас каждый день</h3>
+                <p class="text-gray-405 text-gray-400">Заполните форму и нажмите «Записаться». Данные автоматически сформируются для отправки в WhatsApp салона!</p>
+                
+                <div class="space-y-5 pt-4">
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-full bg-gold/10 flex items-center justify-center text-gold text-xl"><i class="fa-solid fa-location-dot"></i></div>
+                        <div>
+                            <div class="text-sm text-gray-400">Адрес салона</div>
+                            <div class="font-semibold text-white">ул. Каныш Сатпаев, 4, Астана</div>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-full bg-gold/10 flex items-center justify-center text-gold text-xl"><i class="fa-solid fa-phone"></i></div>
+                        <div>
+                            <div class="text-sm text-gray-400">Телефон салона</div>
+                            <a href="tel:+77172368361" class="font-semibold text-white hover:text-gold transition">+7 (7172) 36-83-61</a>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-full bg-emerald-500/10 flex items-center justify-center text-emerald-400 text-xl"><i class="fa-brands fa-whatsapp"></i></div>
+                        <div>
+                            <div class="text-sm text-gray-400">Мастер депиляции (Анастасия Град)</div>
+                            <a href="tel:+77023999336" class="font-semibold text-emerald-400 hover:underline">+7 (702) 399-93-36</a>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-full bg-gold/10 flex items-center justify-center text-gold text-xl"><i class="fa-solid fa-clock"></i></div>
+                        <div>
+                            <div class="text-sm text-gray-400">Режим работы</div>
+                            <div class="font-semibold text-white">Ежедневно: 10:00 – 21:00</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="bg-white/5 border border-white/10 p-8 rounded-3xl backdrop-blur-md shadow-2xl" data-aos="fade-left">
+                <h4 class="font-serif text-2xl font-bold mb-2">Онлайн запись</h4>
+                <p class="text-xs text-gray-400 mb-6">Введите ваши данные для брони:</p>
+                
+                <form onsubmit="sendBooking(event)" class="space-y-4">
+                    <div>
+                        <label class="block text-sm text-gray-300 mb-1">Ваше имя *</label>
+                        <input type="text" id="b-name" required placeholder="Например: Мадина" class="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-gold transition">
+                    </div>
+
+                    <div>
+                        <label class="block text-sm text-gray-300 mb-1">Выберите услугу *</label>
+                        <select id="b-service" required class="w-full bg-gray-800 border border-white/20 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-gold transition">
+                            <option value="Парикмахерские услуги / Стрижка">Парикмахерские услуги / Стрижка</option>
+                            <option value="Маникюр / Педикюр">Маникюр / Педикюр</option>
+                            <option value="Женская депиляция (Анастасия Град)">Женская депиляция (Анастасия Град)</option>
+                            <option value="Эпиляция (Шугаринг/Воск)">Эпиляция (Шугаринг / Воск)</option>
+                            <option value="Другая услуга">Другая услуга</option>
+                        </select>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-sm text-gray-300 mb-1">Дата *</label>
+                            <input type="date" id="b-date" required class="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-gold transition">
+                        </div>
+                        <div>
+                            <label class="block text-sm text-gray-300 mb-1">Время *</label>
+                            <input type="time" id="b-time" required class="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-gold transition">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm text-gray-300 mb-1">Комментарий</label>
+                        <textarea id="b-note" rows="2" placeholder="Ваши пожелания..." class="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-gold transition"></textarea>
+                    </div>
+
+                    <button type="submit" class="w-full bg-gold hover:bg-gold-dark text-white font-bold py-4 rounded-xl transition duration-300 shadow-lg shadow-gold/30 flex items-center justify-center gap-3 text-lg mt-4">
+                        <i class="fa-brands fa-whatsapp text-2xl"></i> Записаться через WhatsApp
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black text-gray-500 py-8 border-t border-white/10 text-center text-sm">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div>© 2026 Салон красоты «Акмарал», Астана, ул. Каныш Сатпаев, 4.</div>
+            <div class="flex items-center gap-4">
+                <a href="tel:+77172368361" class="hover:text-gold transition text-lg"><i class="fa-solid fa-phone"></i></a>
+                <a href="https://wa.me/77023999336" class="hover:text-emerald-400 transition text-lg"><i class="fa-brands fa-whatsapp"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+
+        function toggleMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const icon = document.getElementById('menu-icon');
+            menu.classList.toggle('hidden');
+            icon.classList.toggle('fa-bars');
+            icon.classList.toggle('fa-xmark');
+        }
+
+        function sendBooking(event) {
+            event.preventDefault();
+
+            const name = document.getElementById('b-name').value;
+            const service = document.getElementById('b-service').value;
+            const date = document.getElementById('b-date').value;
+            const time = document.getElementById('b-time').value;
+            const note = document.getElementById('b-note').value;
+
+            let phone = "77172368361";
+            if(service.includes("Анастасия")) {
+                phone = "77023999336";
+            }
+
+            let text = `Здравствуйте, Салон красоты «Акмарал»!\n`;
+            text += `Хочу записаться через сайт:\n\n`;
+            text += `👤 *Имя:* ${name}\n`;
+            text += `💅 *Услуга:* ${service}\n`;
+            text += `📅 *Дата:* ${date}\n`;
+            text += `⏰ *Время:* ${time}\n`;
+            if (note) {
+                text += `💬 *Комментарий:* ${note}\n`;
+            }
+
+            const encodedText = encodeURIComponent(text);
+            const whatsappUrl = `https://wa.me/${phone}?text=${encodedText}`;
+
+            window.open(whatsappUrl, '_blank');
+        }
+    </script>
+</body>
+</html>
